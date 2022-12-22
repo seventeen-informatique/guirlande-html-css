@@ -62,6 +62,13 @@ header h2 > a
 }
 /*end::header*/
 
+/*begin::main*/
+main > section:not(:first-child)
+{
+    margin-top: 10rem;
+}
+/*end::main*/
+
 /*begin::guirlande*/
 .guirlande
 {
@@ -90,5 +97,40 @@ header h2 > a
     border-bottom-right-radius: 9px;
     background-color: var(--white);
     box-shadow: 0px 0px 10px 1px var(--white);
+}
+
+g > rect[fill="rgb(235,235,235)"]:nth-child(even)
+{
+    fill: var(--white);
+    -moz-box-shadow: 0px 0px 25px var(--white);
+    -webkit-box-shadow: 0px 0px 25px var(--white);
+    box-shadow: 0px 0px 25px 1px var(--white);
+    animation: ampoule_cligno .5s infinite;
+}
+
+g > rect[fill="rgb(235,235,235)"]:nth-child(odd)
+{
+    fill: var(--white);
+    -moz-box-shadow: 0px 0px 25px var(--white);
+    -webkit-box-shadow: 0px 0px 25px var(--white);
+    box-shadow: 0px 0px 25px 1px var(--white);
+    animation: ampoule_cligno 1s infinite;
+}
+
+@keyframes ampoule_cligno {
+    0%, 100%
+    {
+        fill: var(--white);
+        -moz-box-shadow: 0px 0px 25px var(--white);
+        -webkit-box-shadow: 0px 0px 25px var(--white);
+        box-shadow: 0px 0px 25px 1px var(--white);
+    }
+    50%
+    {
+        fill: var(--black);
+        -moz-box-shadow: 0px 0px 25px var(--white);
+        -webkit-box-shadow: 0px 0px 25px var(--white);
+        box-shadow: 0px 0px 25px 1px var(--white);
+    }
 }
 /*end::guirlande*/
